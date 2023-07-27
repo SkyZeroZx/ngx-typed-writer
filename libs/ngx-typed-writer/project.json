@@ -51,12 +51,6 @@
           "libs/ngx-typed-writer/**/*.html"
         ]
       }
-    },
-    "release": {
-      "executor": "nx-release:build-update-publish",
-      "options": {
-        "libName": "ngx-typed-writer"
-      }
     }
   }
 }
