@@ -78,7 +78,6 @@ export function backSpaceHtmlChars(
   return currentStringPosition;
 }
 
-
 /**
  * The function `shuffleStringsIfNeeded` shuffles an array of strings if a boolean flag is set to true,
  * otherwise it returns the original array.
