@@ -1,0 +1,28 @@
+<main class="pt-24 flex items-center justify-center">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h1 class="text-4xl font-extrabold text-gray-900 sm:text-6xl">
+        Ngx Typed Writer
+      </h1>
+      <p class="mt-5 text-xl text-gray-500">
+        Awesome Angular Library for typping text animation
+      </p>
+    </div>
+    <div class="mt-10">
+      <div
+        class="type-wrap text-center mt-5 text-xl text-gray-700 max-sm:text-lg"
+      >
+        <ngx-typed-writer
+          [strings]="data"
+          [temporalText]="'Default'"
+        ></ngx-typed-writer>
+      </div>
+    </div>
+
+    <typed-writer-basic-usage />
+    <typed-writer-fade-out />
+    <typed-writer-smart-backspace />
+    <typed-writer-shuffled />
+    <typed-writer-documentation />
+  </div>
+</main>

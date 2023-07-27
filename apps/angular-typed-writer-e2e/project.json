@@ -1,0 +1,33 @@
+{
+  "name": "angular-typed-writer-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/angular-typed-writer-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/angular-typed-writer-e2e/cypress.config.ts",
+        "devServerTarget": "angular-typed-writer:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "angular-typed-writer:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "angular-typed-writer:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/angular-typed-writer-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["angular-typed-writer"]
+}

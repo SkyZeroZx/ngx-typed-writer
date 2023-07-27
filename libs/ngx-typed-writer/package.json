@@ -1,0 +1,28 @@
+{
+  "name": "ngx-typed-writer",
+  "description": "A Angular 2+ Typing Animation Library",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skyzerozx/angular-typed-writer/tree/main/libs"
+  },
+  "keywords": [
+    "angular",
+    "typed.js",
+    "angular typing animation library"
+  ],
+  "author": {
+    "name": "Jaime Burgos Tejada"
+  },
+  "peerDependencies": {
+    "@angular/common": "16.0.0",
+    "@angular/core": "16.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
