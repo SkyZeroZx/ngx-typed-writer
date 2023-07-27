@@ -25,7 +25,7 @@ import {
     <span #typedText>
       <span *ngIf="loadingComponent">{{ temporalText }}</span>
     </span>
-    <span #cursor class="typing-cursor" *ngIf="showCursor"
+    <span #cursorRef class="typing-cursor" *ngIf="showCursor"
       >{{ cursorChar }}
     </span>
   `,
@@ -60,7 +60,7 @@ import {
 export class NgxTypedWriterComponent implements OnInit, OnDestroy {
   @ViewChild('typedText', { static: true }) typedTextRef!: ElementRef;
   @ViewChild('cursor')
-  cursor!: ElementRef;
+  cursorRef!: ElementRef;
 
   @Input()
   strings: string[] = [];
@@ -155,7 +155,7 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
       this.renderer2.removeClass(typedElement, FADE_OUT_CLASS);
 
       if (this.showCursor) {
-        const cursorElement = this.cursor?.nativeElement as HTMLSpanElement;
+        const cursorElement = this.cursorRef?.nativeElement as HTMLSpanElement;
         this.renderer2.removeClass(cursorElement, FADE_OUT_CLASS);
       }
     }
@@ -285,7 +285,7 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
     this.renderer2.addClass(typedElement, FADE_OUT_CLASS);
 
     if (this.showCursor) {
-      const cursorElement = this.cursor.nativeElement as HTMLSpanElement;
+      const cursorElement = this.cursorRef.nativeElement as HTMLSpanElement;
       this.renderer2.addClass(cursorElement, FADE_OUT_CLASS);
     }
 
