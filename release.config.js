@@ -26,7 +26,7 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: `VERSION=\${nextRelease.version} npx nx run-many -t release && VERSION=\${nextRelease.version} npx -p replace-json-property rjp ./package.json version \${nextRelease.version}`,
+        prepareCmd: `VERSION=1.0.1 npx nx run-many -t release && VERSION=1.0.1 npx -p replace-json-property rjp ./package.json version 1.0.1`,
       },
     ],
     [
