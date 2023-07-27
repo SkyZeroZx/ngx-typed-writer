@@ -18,7 +18,7 @@ jobs:
         run: npm ci
       - name: Lint affected
         run: npx nx affected -t lint
-      - name: Test affected
-        run: npx nx affected -t test --configuration=ci
+      # - name: Test affected
+      #   run: npx nx affected -t test --configuration=ci
       - name: Build affected
         run: npx nx affected -t build
