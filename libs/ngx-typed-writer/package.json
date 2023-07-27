@@ -1,6 +1,6 @@
 {
   "name": "ngx-typed-writer",
-  "description": "A Angular 2+ Typing Animation Library",
+  "description": "A Angular 2+ Typing Animation Library. Angular Universal Friendly",
   "version": "1.0.0",
   "publishConfig": {
     "access": "public"
@@ -11,6 +11,11 @@
   },
   "keywords": [
     "angular",
+    "ngx-typed-writer",
+    "based in typed.js",
+    "typping animation Angular",
+    "Angular Universal Friendly",
+    "Angular 16",
     "typed.js",
     "angular typing animation library"
   ],
