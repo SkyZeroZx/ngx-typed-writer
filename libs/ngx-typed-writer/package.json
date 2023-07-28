@@ -23,8 +23,8 @@
     "name": "Jaime Burgos Tejada"
   },
   "peerDependencies": {
-    "@angular/common": "16.0.0",
-    "@angular/core": "16.0.0"
+    "@angular/common": ">=16.0.0",
+    "@angular/core": ">=16.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
