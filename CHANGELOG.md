@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.0.1...v1.1.0) (2023-07-28)
+
+
+### Features
+
+* rename cursor ([0f6688a](https://github.com/SkyZeroZx/ngx-typed-writer/commit/0f6688a653470977fdaca71a24053a15b12984a6))
+
 ## 1.0.0 (2023-07-27)
 
 
