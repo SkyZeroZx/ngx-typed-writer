@@ -12,8 +12,8 @@ jobs:
         run: npm ci
       - name: Lint
         run: npx nx run-many -t lint
-      - name: Build
-        run: npx nx run-many -t build
+      # - name: Build
+      #   run: npx nx run-many -t build
       # - name: Test
       #   run: npx nx run-many -t test --configuration=ci
       - name: Release

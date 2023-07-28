@@ -2,7 +2,17 @@
   "name": "@typed-writer/source",
   "version": "1.0.1",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve --project angular-typed-writer",
+    "prepare": "npm run build",
+    "lint:affected": "nx affected -t lint",
+    "test:affected": "nx affected -t test",
+    "build:affected": "nx affected -t build",
+    "build": "nx run-many -t build",
+    "lint": "nx run-many -t lint",
+    "release": "VERSION=$VERSION npm run update-versions && npm run build && nx run-many -t publish",
+    "bump-version:root": "rjp package.json version $VERSION"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~16.1.0",
