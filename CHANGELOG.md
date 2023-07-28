@@ -1,3 +1,15 @@
+## [1.1.1](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.1.0...v1.1.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* update peerDependencies ([d1b9f30](https://github.com/SkyZeroZx/ngx-typed-writer/commit/d1b9f30761482c5fc6480e085d8dcf56a07d43a9))
+
+
+### Chores
+
+* update peerDependencies ([5ee66a9](https://github.com/SkyZeroZx/ngx-typed-writer/commit/5ee66a9229a71fe0462e10a2c7a4eb5953e26a1f))
+
 ## [1.1.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.0.1...v1.1.0) (2023-07-28)
 
 
