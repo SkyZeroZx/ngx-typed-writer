@@ -18,20 +18,3 @@
 ### Chores
 
 * Add ChangeLog ([6ea2db5](https://github.com/SkyZeroZx/ngx-typed-writer/commit/6ea2db5e4241b150b9c98f1552d99ce5865a4544))
-
-## 1.0.1 (2023-27-07)
-
-
-### Features
-
-* Fix Documentation and minor errors
-
-
-
-
-## 1.0.0 (2023-26-07)
-
-
-### Features
-
-* 🎸 Initial release
