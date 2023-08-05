@@ -102,7 +102,6 @@ export class AppModule { }
 | shuffle        | `boolean`  | Whether to shuffle the strings before typing them.                          |
 | backDelay      | `number`   | The delay before the back-spacing starts, in milliseconds.                  |
 | isHTML         | `boolean`  | Whether the strings contain HTML.                                           |
-| temporalText   | `string`   | A string that is displayed while the component is loading.                  |
 | fadeOut        | `boolean`  | Whether the component should fade out after each string is typed.           |
 | loop           | `boolean`  | When you activate the loop, the list of strings loops infinitely with the typing animation. |
 | showCursor     | `boolean`  | Whether to show a cursor while the component is typing.                     |

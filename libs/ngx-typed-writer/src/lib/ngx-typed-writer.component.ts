@@ -22,9 +22,7 @@ import {
 @Component({
   selector: 'ngx-typed-writer',
   template: `
-    <span #typedText>
-      <span *ngIf="loadingComponent">{{ temporalText }}</span>
-    </span>
+    <span #typedText> </span>
     <span #cursorRef class="typing-cursor" *ngIf="showCursor"
       >{{ cursorChar }}
     </span>
@@ -87,9 +85,6 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
   isHTML = false;
 
   @Input()
-  temporalText = '';
-
-  @Input()
   fadeOut = false;
 
   @Input()
@@ -111,8 +106,6 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
   private timeout!: NodeJS.Timeout;
   private stopNum = 0;
 
-  loadingComponent = true;
-
   @Output()
   destroy = new EventEmitter<void>();
 
@@ -129,7 +122,6 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     isPlatformBrowser(this.platformId) && this.init();
-    this.loadingComponent = false;
   }
 
   ngOnDestroy(): void {
