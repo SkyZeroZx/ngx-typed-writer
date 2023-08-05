@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.1.1...v1.1.2) (2023-08-05)
+
+
+### Bug Fixes
+
+* remove temporalText ([7c739ef](https://github.com/SkyZeroZx/ngx-typed-writer/commit/7c739efd1075ec4bfbf643ee83b9222121b629b3))
+* remove temporalText && Nx dependences ([a577507](https://github.com/SkyZeroZx/ngx-typed-writer/commit/a57750783ddd22d56705818eeeac4aa59bc83af1))
+
 ## [1.1.1](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.1.0...v1.1.1) (2023-07-28)
 
 
