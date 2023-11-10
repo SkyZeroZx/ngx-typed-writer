@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   EventEmitter,
@@ -21,6 +22,7 @@ import {
 
 @Component({
   selector: 'ngx-typed-writer',
+  changeDetection : ChangeDetectionStrategy.OnPush,
   template: `
     <span #typedText> </span>
     <span #cursorRef class="typing-cursor" *ngIf="showCursor"

@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
-import { NgxTypedWriterModule } from 'ngx-typed-writer';
-import {
+ import {
   BasicUsageComponent,
   FadeOutComponent,
   SmartBackspaceComponent,
   ShuffledComponent,
   DocumentationComponent,
 } from './components';
+import { NgxTypedWriterModule } from 'ngx-typed-writer';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import {
     NgxTypedWriterModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
   ],
-  providers: [],
+  providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -7,6 +7,8 @@ tmp
 
 # dependencies
 node_modules
+.nx
+
 
 # IDEs and editors
 /.idea
@@ -39,3 +41,5 @@ testem.log
 Thumbs.db
 
 .angular
+
+.nx/cache
