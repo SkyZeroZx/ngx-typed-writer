@@ -2,14 +2,14 @@ name: RELEASE
 on: [workflow_dispatch]
 jobs:
   main:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - uses: nrwl/nx-set-shas@v3
       - name: Install deps
-        run: npm ci
+        run: npm i
       - name: Lint
         run: npx nx run-many -t lint
       # - name: Build
