@@ -1,7 +1,7 @@
 {
   "name": "ngx-typed-writer",
   "description": "A Angular 2+ Typing Animation Library. Angular Universal Friendly",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
