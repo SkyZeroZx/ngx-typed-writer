@@ -11,6 +11,7 @@ MIT
 MIT
 
 ngx-typed-writer
+MIT
 
 rxjs
 Apache-2.0
