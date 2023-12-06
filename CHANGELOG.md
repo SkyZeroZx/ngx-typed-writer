@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.1.2...v1.2.0) (2023-12-06)
+
+
+### Features
+
+* Add Compatiblity with Angular 17 ([b5c1433](https://github.com/SkyZeroZx/ngx-typed-writer/commit/b5c1433ebfa71426df17020b60aafd00abdfe16e))
+
 ## [1.1.2](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.1.1...v1.1.2) (2023-08-05)
 
 
