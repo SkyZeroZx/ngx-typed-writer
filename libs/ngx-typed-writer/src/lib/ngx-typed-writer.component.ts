@@ -2,15 +2,16 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  EventEmitter,
   Inject,
-  Input,
   OnDestroy,
   OnInit,
-  Output,
   PLATFORM_ID,
   Renderer2,
-  ViewChild,
+  booleanAttribute,
+  input,
+  model,
+  output,
+  viewChild,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import {
@@ -22,12 +23,12 @@ import {
 
 @Component({
   selector: 'ngx-typed-writer',
-  changeDetection : ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <span #typedText> </span>
-    <span #cursorRef class="typing-cursor" *ngIf="showCursor"
-      >{{ cursorChar }}
-    </span>
+    @if (showCursor()) {
+      <span #cursorRef class="typing-cursor">{{ cursorChar() }} </span>
+    }
   `,
   styles: [
     `
@@ -58,48 +59,35 @@ import {
   ],
 })
 export class NgxTypedWriterComponent implements OnInit, OnDestroy {
-  @ViewChild('typedText', { static: true }) typedTextRef!: ElementRef;
-  @ViewChild('cursorRef')
-  cursor!: ElementRef;
+  typedTextRef = viewChild<ElementRef>('typedText');
 
-  @Input()
-  strings: string[] = [];
+  cursor = viewChild<ElementRef>('cursorRef');
 
-  @Input()
-  typeSpeed = 40;
+  strings = model<string[]>([]);
 
-  @Input()
-  startDelay = 0;
+  typeSpeed = input(40);
 
-  @Input()
-  backSpeed = 40;
+  startDelay = input(0);
 
-  @Input()
-  smartBackspace = false;
+  backSpeed = input(40);
 
-  @Input()
-  shuffle = false;
+  smartBackspace = input(false, { transform: booleanAttribute });
 
-  @Input()
-  backDelay = 1000;
+  shuffle = input(false, { transform: booleanAttribute });
 
-  @Input()
-  isHTML = false;
+  backDelay = input(1000);
 
-  @Input()
-  fadeOut = false;
+  isHTML = input(false, { transform: booleanAttribute });
 
-  @Input()
-  loop = true;
+  fadeOut = input(false, { transform: booleanAttribute });
 
-  @Input()
-  showCursor = true;
+  loop = input(true, { transform: booleanAttribute });
 
-  @Input()
-  cursorChar = '|';
+  showCursor = input(true, { transform: booleanAttribute });
 
-  @Input()
-  fadeOutDelay = 500;
+  cursorChar = input('|');
+
+  fadeOutDelay = input(500);
 
   private currentStringIndex = 0;
   private currentString = '';
@@ -108,18 +96,15 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
   private timeout!: NodeJS.Timeout;
   private stopNum = 0;
 
-  @Output()
-  destroy = new EventEmitter<void>();
+  destroy = output<void>();
 
-  @Output()
-  initTyped = new EventEmitter<void>();
+  initTyped = output<void>();
 
-  @Output()
-  completeLoop = new EventEmitter<void>();
+  completeLoop = output<void>();
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
-    private renderer2: Renderer2
+    private renderer2: Renderer2,
   ) {}
 
   ngOnInit(): void {
@@ -132,24 +117,25 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
   }
 
   private init(): void {
-    this.strings = shuffleStringsIfNeeded(this.shuffle, this.strings);
-    this.currentString = this.strings[this.currentStringIndex];
+    this.strings.set(shuffleStringsIfNeeded(this.shuffle(), this.strings()));
+    this.currentString = this.strings()[this.currentStringIndex];
 
     this.timeout = setTimeout(() => {
       this.typeString();
       this.initTyped.emit();
-    }, this.startDelay);
+    }, this.startDelay());
   }
 
   private typeString(): void {
     if (this.isTypingPaused) return;
 
-    if (this.fadeOut) {
-      const typedElement = this.typedTextRef.nativeElement as HTMLSpanElement;
+    if (this.fadeOut()) {
+      const typedElement = this.typedTextRef()
+        ?.nativeElement as HTMLSpanElement;
       this.renderer2.removeClass(typedElement, FADE_OUT_CLASS);
 
-      if (this.showCursor) {
-        const cursorElement = this.cursor?.nativeElement as HTMLSpanElement;
+      if (this.showCursor()) {
+        const cursorElement = this.cursor()?.nativeElement as HTMLSpanElement;
         this.renderer2.removeClass(cursorElement, FADE_OUT_CLASS);
       }
     }
@@ -162,40 +148,40 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
         this.isTypingPaused = false;
         this.timeout = setTimeout(() => {
           this.backspaceString();
-        }, this.backDelay);
-      }, this.typeSpeed);
+        }, this.backDelay());
+      }, this.typeSpeed());
     }
   }
 
   private typeCharacter(): void {
     this.timeout = setTimeout(() => {
       this.currentStringPosition = typeHtmlChars(
-        this.isHTML,
+        this.isHTML(),
         this.currentString,
-        this.currentStringPosition
+        this.currentStringPosition,
       );
 
       const nextString = this.currentString.substring(
         0,
-        this.currentStringPosition + 1
+        this.currentStringPosition + 1,
       );
-      const lastItem = this.strings.at(-1);
+      const lastItem = this.strings().at(-1);
 
-      this.typedTextRef.nativeElement.innerHTML = nextString;
+      this.typedTextRef()!.nativeElement.innerHTML = nextString;
 
       this.currentStringPosition++;
 
-      if (nextString === lastItem && !this.loop) {
+      if (nextString === lastItem && !this.loop()) {
         this.completeLoop.emit();
         return;
       }
       this.typeString();
-    }, this.typeSpeed);
+    }, this.typeSpeed());
   }
 
   private backspaceString(): void {
     if (this.isTypingPaused) return;
-    if (this.fadeOut) {
+    if (this.fadeOut()) {
       this.initFadeOut();
       return;
     }
@@ -208,8 +194,8 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
         this.isTypingPaused = false;
         this.currentStringIndex++;
 
-        if (this.currentStringIndex >= this.strings.length) {
-          if (this.loop) {
+        if (this.currentStringIndex >= this.strings().length) {
+          if (this.loop()) {
             this.currentStringIndex = 0;
             // this.typeString();
           } else {
@@ -217,34 +203,34 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
           }
         }
 
-        this.currentString = this.strings[this.currentStringIndex];
+        this.currentString = this.strings()[this.currentStringIndex];
         this.timeout = setTimeout(() => {
           this.typeString();
-        }, this.typeSpeed);
-      }, this.typeSpeed);
+        }, this.typeSpeed());
+      }, this.typeSpeed());
     }
   }
 
   private backspaceCharacter(): void {
-    const currentString = this.typedTextRef.nativeElement.innerHTML;
+    const currentString = this.typedTextRef()?.nativeElement.innerHTML;
     this.currentStringPosition = backSpaceHtmlChars(
-      this.isHTML,
+      this.isHTML(),
       this.currentString,
-      this.currentStringPosition
+      this.currentStringPosition,
     );
 
     const curStringAtPosition = currentString.substring(
       0,
-      this.currentStringPosition
+      this.currentStringPosition,
     );
 
-    this.typedTextRef.nativeElement.innerHTML = curStringAtPosition;
+    (this.typedTextRef()!.nativeElement as HTMLElement) .innerHTML = curStringAtPosition;
 
     this.timeout = setTimeout(() => {
       //  if smartBack is enabled
-      if (this.smartBackspace) {
+      if (this.smartBackspace()) {
         // the remaining part of the current string is equal of the same part of the new string
-        const nextStringPartial = this.strings[this.currentStringIndex + 1];
+        const nextStringPartial = this.strings()[this.currentStringIndex + 1];
         const compare =
           curStringAtPosition ===
           nextStringPartial?.substring(0, this.currentStringPosition);
@@ -271,15 +257,15 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
         }
         this.typeString();
       }
-    }, this.backSpeed);
+    }, this.backSpeed());
   }
 
   private initFadeOut() {
-    const typedElement = this.typedTextRef.nativeElement as HTMLSpanElement;
+    const typedElement = this.typedTextRef()?.nativeElement as HTMLSpanElement;
     this.renderer2.addClass(typedElement, FADE_OUT_CLASS);
 
-    if (this.showCursor) {
-      const cursorElement = this.cursor.nativeElement as HTMLSpanElement;
+    if (this.showCursor()) {
+      const cursorElement = this.cursor()?.nativeElement as HTMLSpanElement;
       this.renderer2.addClass(cursorElement, FADE_OUT_CLASS);
     }
 
@@ -288,16 +274,16 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
       typedElement.innerHTML = '';
 
       // Resets current string if end of loop reached
-      if (this.strings.length > this.currentStringIndex) {
+      if (this.strings().length > this.currentStringIndex) {
         this.currentStringPosition = 0;
-        this.currentString = this.strings[this.currentStringIndex];
+        this.currentString = this.strings()[this.currentStringIndex];
         this.typeString();
       } else {
         this.currentStringPosition = 0;
         this.currentStringIndex = 0;
-        this.currentString = this.strings[this.currentStringIndex];
+        this.currentString = this.strings()[this.currentStringIndex];
         this.typeString(); // this.currentStringIndex++;
       }
-    }, this.fadeOutDelay);
+    }, this.fadeOutDelay());
   }
 }
