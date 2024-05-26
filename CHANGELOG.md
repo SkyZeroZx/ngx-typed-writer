@@ -1,3 +1,25 @@
+## [1.3.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.2.0...v1.3.0) (2024-05-26)
+
+
+### Features
+
+* Add support Angular 18 ([d403489](https://github.com/SkyZeroZx/ngx-typed-writer/commit/d40348955a6283cd43114696e2212b613f24c2e8))
+* Add support Angular 18 ([5b987a0](https://github.com/SkyZeroZx/ngx-typed-writer/commit/5b987a0348fc8d225f7bf7ac99d1fb51b027b742))
+
+
+### Bug Fixes
+
+* fixed version conflic with breaking changes of semantic release ([cbe79f5](https://github.com/SkyZeroZx/ngx-typed-writer/commit/cbe79f5a249c92d9d78ba7e96ec6a8ec09040e2b))
+
+
+### Chores
+
+* Update builder & deployment script ([bd1eefc](https://github.com/SkyZeroZx/ngx-typed-writer/commit/bd1eefcb8b5c10b089a50052efc6cdaccdeec5da))
+* update package.lock.json ([9aef02c](https://github.com/SkyZeroZx/ngx-typed-writer/commit/9aef02cdaac0fb746923463c99f27609a6304022))
+* Update readme with version list ([9ea4764](https://github.com/SkyZeroZx/ngx-typed-writer/commit/9ea4764187b27ddc85b00138963e6b38f1074c72))
+* Update runner in release action ([be8c8d9](https://github.com/SkyZeroZx/ngx-typed-writer/commit/be8c8d94c5733809798acbb2d587f1c4f90509e5))
+* Update semantic-release dependence ([74b5a19](https://github.com/SkyZeroZx/ngx-typed-writer/commit/74b5a195771a8ef8d617880e31d18d51b9bd5def))
+
 ## [1.2.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.1.2...v1.2.0) (2023-12-06)
 
 
