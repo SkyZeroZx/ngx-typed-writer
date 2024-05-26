@@ -7,14 +7,14 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@angular-devkit/build-angular:application",
       "outputs": [
         "{options.outputPath}"
       ],
       "options": {
         "outputPath": "dist/apps/angular-typed-writer",
         "index": "apps/angular-typed-writer/src/index.html",
-        "main": "apps/angular-typed-writer/src/main.ts",
+        "browser": "apps/angular-typed-writer/src/main.ts",
         "polyfills": [
           "zone.js"
         ],
@@ -46,9 +46,7 @@
           "outputHashing": "all"
         },
         "development": {
-          "buildOptimizer": false,
           "optimization": false,
-          "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
           "namedChunks": true

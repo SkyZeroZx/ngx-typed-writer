@@ -10,7 +10,7 @@
     "build:affected": "nx affected -t build",
     "build": "nx run-many -t build",
     "lint": "nx run-many -t lint",
-    "deploy:demo": "nx deploy --project=angular-typed-writer --target=prod --base-href=https://skyzerozx.github.io/ngx-typed-writer/",
+    "deploy:demo": "nx run angular-typed-writer:deploy --base-href=https://skyzerozx.github.io/ngx-typed-writer/",
     "release": "VERSION=$VERSION npm run update-versions && npm run build && nx run-many -t publish",
     "bump-version:root": "rjp package.json version $VERSION"
   },
