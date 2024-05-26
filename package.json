@@ -28,7 +28,7 @@
     "@nx/angular": "19.1.0",
     "angular-cli-ghpages": "2.0.0-beta.2",
     "rxjs": "~7.8.1",
-    "semantic-release": "^22.0.12",
+    "semantic-release": "^23.1.1",
     "tslib": "^2.6.2",
     "zone.js": "0.14.6"
   },
