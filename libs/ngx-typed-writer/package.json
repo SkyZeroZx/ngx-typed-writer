@@ -16,7 +16,10 @@
     "based in typed.js",
     "typping animation Angular",
     "Angular Universal Friendly",
+    "Angular SSR Friendly",
     "Angular 16",
+    "Angular 17",
+    "Angular 18",
     "typed.js",
     "angular typing animation library"
   ],
@@ -24,8 +27,8 @@
     "name": "Jaime Burgos Tejada"
   },
   "peerDependencies": {
-    "@angular/common": ">=17.0.0",
-    "@angular/core": ">=17.0.0"
+    "@angular/common": ">=18.0.0",
+    "@angular/core": ">=18.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
