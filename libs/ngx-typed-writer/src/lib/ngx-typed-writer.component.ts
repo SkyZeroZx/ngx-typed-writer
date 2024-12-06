@@ -1,24 +1,25 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
+  booleanAttribute,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
   Inject,
-  OnDestroy,
-  OnInit,
-  PLATFORM_ID,
-  Renderer2,
-  booleanAttribute,
   input,
   model,
+  OnDestroy,
+  OnInit,
   output,
+  PLATFORM_ID,
+  Renderer2,
   viewChild,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+
 import {
-  FADE_OUT_CLASS,
   backSpaceHtmlChars,
-  typeHtmlChars,
+  FADE_OUT_CLASS,
   shuffleStringsIfNeeded,
+  typeHtmlChars,
 } from './util';
 
 @Component({
@@ -108,7 +109,9 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    isPlatformBrowser(this.platformId) && this.init();
+    if (isPlatformBrowser(this.platformId)) {
+      this.init();
+    }
   }
 
   ngOnDestroy(): void {
