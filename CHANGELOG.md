@@ -1,3 +1,14 @@
+## [1.4.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.3.0...v1.4.0) (2024-12-06)
+
+### Features
+
+* Add Support Angular 19 & Zoneless (experimental) ([6a8eecc](https://github.com/SkyZeroZx/ngx-typed-writer/commit/6a8eecccc89c2319975db6af4b50406da3714182))
+
+### Bug Fixes
+
+* Fixed dependency conventional-changelog-conventionalcommits ([233dda2](https://github.com/SkyZeroZx/ngx-typed-writer/commit/233dda20fc0fd128922729c7c237b061de0630c4))
+* Fixed Lint errors ([b208aa0](https://github.com/SkyZeroZx/ngx-typed-writer/commit/b208aa0383704930df7654632a3261ec515bd5c4))
+
 ## [1.3.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.2.0...v1.3.0) (2024-05-26)
 
 
