@@ -224,7 +224,8 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
       this.currentStringPosition,
     );
 
-    (this.typedTextRef()!.nativeElement as HTMLElement) .innerHTML = curStringAtPosition;
+    (this.typedTextRef()!.nativeElement as HTMLElement).innerHTML =
+      curStringAtPosition;
 
     this.timeout = setTimeout(() => {
       //  if smartBack is enabled

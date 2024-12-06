@@ -2,6 +2,8 @@
 
 Angular component for typing text animation . Angular SSR and Universal ( previous Angular 16 ) Friendly.
 
+Zoneless compatibility ( experimental )
+
 Based in [Typed.JS](https://github.com/mattboldt/typed.js)
 
 Rewriter native for Angular
@@ -14,10 +16,11 @@ See a [live demo](https://skyzerozx.github.io/ngx-typed-writer)
 
 Latest version available for each version of Angular
 
-| ngx-facebook-messenger | Angular     |
+| ngx-typed-writer | Angular     |
 | ---------------------- | ----------- |
 | 1.0.0 - 1.2.0          | 16.xx 17.xx |
-| 1.3.0                  | 17.x 18.xx  |
+| 1.3.0                  | 17.x  18.xx |
+| 1.4.0                  | 18.x  19.xx |
 
 ## Basic Usage
 
@@ -99,26 +102,26 @@ export class AppModule { }
 
 # Inputs
 
-| Input          | Type       | Description                                                                                                                                      |
-| -------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| strings        | `string[]` | An array of strings to be typed.                                                                                                                 |
-| typeSpeed      | `number`   | The speed at which the strings are typed, in milliseconds.                                                                                       |
-| startDelay     | `number`   | The delay before the first string is typed, in milliseconds.                                                                                     |
-| backSpeed      | `number`   | The speed at which the strings are back-spaced, in milliseconds.                                                                                 |
-| smartBackspace | `boolean`  | When use smart backspace, which means that the typing will stop <br> when the next string starts with the same characters as the current string. |
-| shuffle        | `boolean`  | Whether to shuffle the strings before typing them.                                                                                               |
-| backDelay      | `number`   | The delay before the back-spacing starts, in milliseconds.                                                                                       |
-| isHTML         | `boolean`  | Whether the strings contain HTML.                                                                                                                |
-| fadeOut        | `boolean`  | Whether the component should fade out after each string is typed.                                                                                |
-| loop           | `boolean`  | When you activate the loop, the list of strings loops infinitely with the typing animation.                                                      |
-| showCursor     | `boolean`  | Whether to show a cursor while the component is typing.                                                                                          |
-| cursorChar     | `string`   | The character to use for the cursor.                                                                                                             |
-| fadeOutDelay   | `number`   | The delay before the component starts to fade out, in milliseconds.                                                                              |
+| Input          | Type       | Description                                                                 |
+|----------------|------------|-----------------------------------------------------------------------------|
+| strings        | `string[]` | An array of strings to be typed.                                            |
+| typeSpeed      | `number`   | The speed at which the strings are typed, in milliseconds.                  |
+| startDelay     | `number`   | The delay before the first string is typed, in milliseconds.                |
+| backSpeed      | `number`   | The speed at which the strings are back-spaced, in milliseconds.            |
+| smartBackspace | `boolean`  | When use smart backspace, which means that the typing will stop  <br> when the next string starts with the same characters as the current string.          |
+| shuffle        | `boolean`  | Whether to shuffle the strings before typing them.                          |
+| backDelay      | `number`   | The delay before the back-spacing starts, in milliseconds.                  |
+| isHTML         | `boolean`  | Whether the strings contain HTML.                                           |
+| fadeOut        | `boolean`  | Whether the component should fade out after each string is typed.           |
+| loop           | `boolean`  | When you activate the loop, the list of strings loops infinitely with the typing animation. |
+| showCursor     | `boolean`  | Whether to show a cursor while the component is typing.                     |
+| cursorChar     | `string`   | The character to use for the cursor.                                        |
+| fadeOutDelay   | `number`   | The delay before the component starts to fade out, in milliseconds.         |
 
 # Outputs
 
 | Output       | Description                                                                          |
-| ------------ | ------------------------------------------------------------------------------------ |
+|--------------|--------------------------------------------------------------------------------------|
 | destroy      | Emitted when the component is destroyed.                                             |
 | initTyped    | Emitted when the first string is typed.                                              |
 | completeLoop | Emitted when the last string is typed and the component loops back to the beginning. |

@@ -15,9 +15,7 @@
         "outputPath": "dist/apps/angular-typed-writer",
         "index": "apps/angular-typed-writer/src/index.html",
         "browser": "apps/angular-typed-writer/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": [],
         "tsConfig": "apps/angular-typed-writer/tsconfig.app.json",
         "assets": [
           "apps/angular-typed-writer/src/favicon.ico",

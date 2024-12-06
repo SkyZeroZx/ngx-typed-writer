@@ -2,6 +2,8 @@
 
 Angular component for typing text animation . Angular SSR and Universal ( previous Angular 16 ) Friendly.
 
+Zoneless compatibility ( experimental )
+
 Based in [Typed.JS](https://github.com/mattboldt/typed.js)
 
 Rewriter native for Angular
@@ -15,11 +17,11 @@ See a [live demo](https://skyzerozx.github.io/ngx-typed-writer)
 
 Latest version available for each version of Angular
 
-| ngx-facebook-messenger | Angular     |
+| ngx-typed-writer | Angular     |
 | ---------------------- | ----------- |
 | 1.0.0 - 1.2.0          | 16.xx 17.xx |
 | 1.3.0                  | 17.x  18.xx |
-
+| 1.4.0                  | 18.x  19.xx |
 
 ## Basic Usage
 
