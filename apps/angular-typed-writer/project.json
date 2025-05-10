@@ -8,9 +8,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/angular-typed-writer",
         "index": "apps/angular-typed-writer/src/index.html",
@@ -22,9 +20,7 @@
           "apps/angular-typed-writer/src/assets",
           "apps/angular-typed-writer/src/robots.txt"
         ],
-        "styles": [
-          "apps/angular-typed-writer/src/styles.scss"
-        ],
+        "styles": ["apps/angular-typed-writer/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -62,7 +58,8 @@
           "buildTarget": "angular-typed-writer:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -72,9 +69,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "apps/angular-typed-writer/**/*.ts",
@@ -84,9 +79,7 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/angular-typed-writer/jest.config.ts"
       }
