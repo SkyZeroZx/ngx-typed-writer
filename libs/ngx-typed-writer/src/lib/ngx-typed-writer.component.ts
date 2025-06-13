@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  Inject,
+  inject,
   input,
   model,
   OnDestroy,
@@ -60,6 +60,9 @@ import {
   ],
 })
 export class NgxTypedWriterComponent implements OnInit, OnDestroy {
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly renderer2 = inject(Renderer2);
+
   typedTextRef = viewChild<ElementRef>('typedText');
 
   cursor = viewChild<ElementRef>('cursorRef');
@@ -102,11 +105,6 @@ export class NgxTypedWriterComponent implements OnInit, OnDestroy {
   initTyped = output<void>();
 
   completeLoop = output<void>();
-
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: object,
-    private renderer2: Renderer2,
-  ) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
