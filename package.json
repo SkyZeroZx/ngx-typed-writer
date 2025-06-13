@@ -17,6 +17,7 @@
     "release": "VERSION=$VERSION npm run update-versions && npm run build && nx run-many -t publish",
     "bump-version:root": "rjp package.json version $VERSION"
   },
+  "homepage": "https://github.com/SkyZeroZx/ngx-typed-writer#readme",
   "private": true,
   "dependencies": {
     "@angular/animations": "20.0.3",
