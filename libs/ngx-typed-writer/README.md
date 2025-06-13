@@ -2,7 +2,7 @@
 
 Angular component for typing text animation . Angular SSR and Universal ( previous Angular 16 ) Friendly.
 
-Zoneless compatibility ( experimental )
+Zoneless compatibility ( developer preview )
 
 Based in [Typed.JS](https://github.com/mattboldt/typed.js)
 
@@ -11,6 +11,7 @@ Rewriter native for Angular
 # DEMO
 
 See a [live demo](https://skyzerozx.github.io/ngx-typed-writer)
+
 
 ## Versions
 
@@ -21,6 +22,7 @@ Latest version available for each version of Angular
 | 1.0.0 - 1.2.0          | 16.xx 17.xx |
 | 1.3.0                  | 17.x  18.xx |
 | 1.4.0                  | 18.x  19.xx |
+| 1.5.0                  | 19.x  20.xx |
 
 ## Basic Usage
 
@@ -79,7 +81,23 @@ In the following example emable `smartBackspace`, this would only backspace the 
 
 ## Install
 
-`npm install ngx-typed-writer`
+```bash
+npm install ngx-typed-writer
+``` 
+
+## Import Standalone
+
+```typescript
+import { NgxTypedWriterComponent } from 'ngx-typed-writer';
+
+@NgModule({
+  imports: [
+    ...,
+    NgxTypedWriterComponent
+  ]
+})
+export class AwesomeComponent { }
+```
 
 ## Import into Module
 
