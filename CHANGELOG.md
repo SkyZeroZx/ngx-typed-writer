@@ -1,3 +1,18 @@
+## [1.5.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.4.0...v1.5.0) (2025-06-13)
+
+### Features
+
+* Add support Angular 20 & Zoneless ( Developer preview ) ([b06b75a](https://github.com/SkyZeroZx/ngx-typed-writer/commit/b06b75ae3125c8c8c9c1da239d16eef349bb84fc))
+
+### Chores
+
+* Change injection constructor to function ([8d87af9](https://github.com/SkyZeroZx/ngx-typed-writer/commit/8d87af9517a12547cd643bfea0e3d6d8b8dcff28))
+* update demo tailwind to v4 ([1101d24](https://github.com/SkyZeroZx/ngx-typed-writer/commit/1101d2467790e72b50a81b8e3130f786a09abd53))
+* update dependencies package-lock.json ([de86118](https://github.com/SkyZeroZx/ngx-typed-writer/commit/de86118fa347d84d587fd03b53d1ba659cfdb792))
+* update keywords package.json ([6ac7573](https://github.com/SkyZeroZx/ngx-typed-writer/commit/6ac757339ab703ba41a1505aff7bc2c6f07cd63a))
+* update nx version to v21 ([a59128d](https://github.com/SkyZeroZx/ngx-typed-writer/commit/a59128dd62e0d584f8ebbd3442c64165a31656ca))
+* update readme to release update angular v20 ([6730202](https://github.com/SkyZeroZx/ngx-typed-writer/commit/6730202ac7807a3eb1c91513c032c6287182c7f7))
+
 ## [1.4.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.3.0...v1.4.0) (2024-12-06)
 
 ### Features
