@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.5.0...v1.5.1) (2025-06-13)
+
+### Bug Fixes
+
+* Fixed documentation homepage ([6234928](https://github.com/SkyZeroZx/ngx-typed-writer/commit/62349289d2d2691338d1d2513a17a2dcb8b19b68))
+* Fixed homepage in package.json root ([f9c5f53](https://github.com/SkyZeroZx/ngx-typed-writer/commit/f9c5f53a414b46e1ede9ea6537675c02d2e20c42))
+
 ## [1.5.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.4.0...v1.5.0) (2025-06-13)
 
 ### Features
