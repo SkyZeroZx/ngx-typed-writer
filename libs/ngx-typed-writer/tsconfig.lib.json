@@ -6,7 +6,8 @@
     "declarationMap": true,
     "inlineSources": true,
     "lib": ["ES2022", "dom"],
-    "types": ["node"]
+    "types": ["node"],
+    "moduleResolution": "bundler"
   },
   "exclude": [
     "src/**/*.spec.ts",

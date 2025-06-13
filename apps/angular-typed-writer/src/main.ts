@@ -1,4 +1,8 @@
 import {
+  provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection,
+} from '@angular/core';
+import {
   bootstrapApplication,
   provideClientHydration,
   withEventReplay,
@@ -10,11 +14,11 @@ import {
 
 import { AppComponent } from './app/app.component';
 import { appRoutes } from './app/app.routes';
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideExperimentalZonelessChangeDetection(),
+    provideBrowserGlobalErrorListeners(),
+    provideZonelessChangeDetection(),
     provideClientHydration(withEventReplay()),
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
   ],

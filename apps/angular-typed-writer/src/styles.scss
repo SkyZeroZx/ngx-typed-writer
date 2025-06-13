@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@use 'tailwindcss';
 
 .type-wrap {
   margin: 10px auto;
@@ -14,28 +14,22 @@
   padding: 0.5em;
   background: #f0f0f0;
 }
-/* Estilos para pantallas pequeñas */
-@media screen and (max-width: 480px) {
-  /* Ajustar tamaño del texto y padding */
 
+@media screen and (max-width: 480px) {
   .hljs {
     font-size: 10px;
     padding: 0.3em;
   }
 }
 
-/* Estilos para pantallas medianas */
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  /* Ajustar tamaño del texto y padding */
   .hljs {
     font-size: 11px;
     padding: 0.4em;
   }
 }
 
-/* Estilos para pantallas grandes */
 @media screen and (min-width: 769px) {
-  /* Ajustar tamaño del texto y padding */
   .hljs {
     font-size: 18px;
     padding: 0.5em;
