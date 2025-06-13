@@ -10,11 +10,12 @@
     "type": "git",
     "url": "https://github.com/SkyZeroZx/ngx-typed-writer"
   },
+  "homepage": "https://github.com/SkyZeroZx/ngx-typed-writer#readme",
   "keywords": [
     "angular",
     "ngx-typed-writer",
     "based in typed.js",
-    "typping animation Angular",
+    "typing animation Angular",
     "Angular Universal Friendly",
     "Angular SSR Friendly",
     "Angular 16",
