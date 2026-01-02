@@ -1,6 +1,6 @@
 {
   "name": "ngx-typed-writer",
-  "description": "A Angular 2+ Typing Animation Library. Angular Universal Friendly",
+  "description": "A Angular 2+ Typing Animation Library. Angular SSR Friendly",
   "version": "1.5.1",
   "license": "MIT",
   "publishConfig": {
@@ -23,7 +23,8 @@
     "Angular 18",
     "Angular 19",
     "Angular 20",
-    "ZoneLess Compatibility ( Developer preview )",
+    "Angular 21",
+    "ZoneLess Compatibility",
     "typed.js",
     "angular typing animation library"
   ],
