@@ -1,3 +1,14 @@
+## [1.6.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.5.1...v1.6.0) (2026-01-02)
+
+### Features
+
+* Add support Angular 21 ([467a748](https://github.com/SkyZeroZx/ngx-typed-writer/commit/467a74811a990444fc7043ae2d3bd0134e7f38bf))
+
+### Chores
+
+* Update peerDependencies for Angular to version 20.0.0 ([30f8099](https://github.com/SkyZeroZx/ngx-typed-writer/commit/30f80995136bb61602420104dea762f295472ffe))
+* Update README ([de4d689](https://github.com/SkyZeroZx/ngx-typed-writer/commit/de4d6897184e0f7a2abedfac91205c35788a154f))
+
 ## [1.5.1](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.5.0...v1.5.1) (2025-06-13)
 
 ### Bug Fixes
