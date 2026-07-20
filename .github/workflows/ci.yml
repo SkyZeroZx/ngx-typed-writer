@@ -1,4 +1,5 @@
 name: CI
+
 on:
   push:
     branches:
@@ -6,19 +7,34 @@ on:
       - '*/*'
       - '**'
       - '!main'
+
+permissions:
+  actions: read
+  contents: read
+
 jobs:
   main:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: nrwl/nx-set-shas@v3
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - uses: nrwl/nx-set-shas@v5
+
       - name: Install deps
-        run: npm i
+        run: npm ci
+
       - name: Lint affected
         run: npx nx affected -t lint
-      # - name: Test affected
-      #   run: npx nx affected -t test --configuration=ci
+
+      - name: Test affected
+        run: npx nx affected -t test --configuration=ci
+
       - name: Build affected
         run: npx nx affected -t build

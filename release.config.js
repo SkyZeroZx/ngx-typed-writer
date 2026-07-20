@@ -26,13 +26,25 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: `VERSION=\${nextRelease.version} npx nx run-many -t release && VERSION=\${nextRelease.version} npm run bump-version:root`,
+        prepareCmd:
+          'npm version ${nextRelease.version} --no-git-tag-version && npm version ${nextRelease.version} --no-git-tag-version --prefix libs/ngx-typed-writer && npm run build',
+      },
+    ],
+    [
+      '@semantic-release/npm',
+      {
+        pkgRoot: 'dist/libs/ngx-typed-writer',
       },
     ],
     [
       '@semantic-release/git',
       {
-        assets: [`libs/**/package.json`, `package.json`, `CHANGELOG.md`],
+        assets: [
+          `libs/**/package.json`,
+          `package.json`,
+          `package-lock.json`,
+          `CHANGELOG.md`,
+        ],
         message:
           'chore(release): -v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },

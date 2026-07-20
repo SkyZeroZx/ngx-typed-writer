@@ -143,3 +143,7 @@ export class AppModule { }
 | destroy      | Emitted when the component is destroyed.                                             |
 | initTyped    | Emitted when the first string is typed.                                              |
 | completeLoop | Emitted when the last string is typed and the component loops back to the beginning. |
+
+## Maintainers
+
+See [RELEASING.md](./RELEASING.md) to publish from GitHub Actions without a long-lived npm token.

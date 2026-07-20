@@ -1,26 +1,67 @@
 name: RELEASE
-on: [workflow_dispatch]
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Preview release without publishing
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: npm-release
+  cancel-in-progress: false
+
 jobs:
-  main:
-    runs-on: ubuntu-22.04
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: nrwl/nx-set-shas@v4
-      - uses: actions/setup-node@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
-      - name: Install deps
+          node-version: 24
+          registry-url: https://registry.npmjs.org/
+          package-manager-cache: false
+
+      - name: Use npm with trusted-publishing support
+        run: npm install --global npm@11
+
+      - name: Show tool versions
+        run: |
+          node --version
+          npm --version
+
+      - name: Install dependencies
         run: npm ci
+
       - name: Lint
-        run: npx nx run-many -t lint
-      # - name: Build
-      #   run: npx nx run-many -t build
-      # - name: Test
-      #   run: npx nx run-many -t test --configuration=ci
-      - name: Release
-        run: npx semantic-release
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      - name: Preview release
+        if: ${{ inputs.dry_run }}
+        run: npm run release:dry-run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Release to GitHub and npm
+        if: ${{ !inputs.dry_run }}
+        run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
