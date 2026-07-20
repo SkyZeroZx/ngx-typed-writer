@@ -38,7 +38,7 @@ npm trust github ngx-typed-writer \
 2. Open **GitHub > Actions > RELEASE > Run workflow**.
 3. Enable `dry_run` for a preview, or leave it disabled to publish.
 
-The workflow installs dependencies, runs lint/tests/build, calculates the version with semantic-release, updates package versions and `CHANGELOG.md`, publishes `dist/libs/ngx-typed-writer` to npm, creates the Git tag, and pushes the release commit.
+The workflow installs dependencies, runs lint/build, calculates the version with semantic-release, updates package versions and `CHANGELOG.md`, publishes `dist/libs/ngx-typed-writer` to npm, creates the Git tag, and pushes the release commit.
 
 ## Security cleanup
 
