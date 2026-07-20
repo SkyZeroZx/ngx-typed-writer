@@ -1,3 +1,14 @@
+## [1.7.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.6.0...v1.7.0) (2026-07-20)
+
+### Features
+
+* add Angular 22 and Nx 23.1 support ([cc88bd7](https://github.com/SkyZeroZx/ngx-typed-writer/commit/cc88bd745e2b71355501261a20caa799162c12e0))
+
+### Chores
+
+* update dependencies to latest versions for Angular, Nx, and related packages ([0a737a7](https://github.com/SkyZeroZx/ngx-typed-writer/commit/0a737a7322b73f0a0b98eafc1570bfe7bd6ffdda))
+* update peerDependencies for Angular to version 21.0.0 ([79a8c4e](https://github.com/SkyZeroZx/ngx-typed-writer/commit/79a8c4e199c2bd5ab206f37c51cb409bfc4505c1))
+
 ## [1.6.0](https://github.com/SkyZeroZx/ngx-typed-writer/compare/v1.5.1...v1.6.0) (2026-01-02)
 
 ### Features
