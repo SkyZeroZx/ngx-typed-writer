@@ -24,6 +24,7 @@
     "Angular 19",
     "Angular 20",
     "Angular 21",
+    "Angular 22",
     "ZoneLess Compatibility",
     "typed.js",
     "angular typing animation library"
@@ -32,8 +33,8 @@
     "name": "Jaime Burgos Tejada"
   },
   "peerDependencies": {
-    "@angular/common": ">=20.0.0",
-    "@angular/core": ">=20.0.0"
+    "@angular/common": ">=21.0.0",
+    "@angular/core": ">=21.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
