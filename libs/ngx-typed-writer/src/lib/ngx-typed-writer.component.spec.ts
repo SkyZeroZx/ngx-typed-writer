@@ -7,7 +7,7 @@ describe('NgxTypedWriterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NgxTypedWriterComponent],
+      imports: [NgxTypedWriterComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NgxTypedWriterComponent);

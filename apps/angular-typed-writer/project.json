@@ -9,6 +9,7 @@
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/angular-typed-writer",
         "index": "apps/angular-typed-writer/src/index.html",
@@ -45,11 +46,12 @@
           "sourceMap": true,
           "namedChunks": true
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "defaultConfiguration": "development",
+      "continuous": true,
       "configurations": {
         "production": {
           "buildTarget": "angular-typed-writer:build:production"
@@ -57,9 +59,7 @@
         "development": {
           "buildTarget": "angular-typed-writer:build:development"
         }
-      },
-      "defaultConfiguration": "development",
-      "continuous": true
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",

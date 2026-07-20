@@ -21,6 +21,7 @@ Latest version available for each version of Angular
 | 1.4.0            | 18.x 19.xx  |
 | 1.5.0            | 19.x 20.xx  |
 | 1.6.0            | 20.x 21.xx  |
+| 1.7.0            | 21.x 22.x   |
 
 ## Basic Usage
 
@@ -86,15 +87,16 @@ npm install ngx-typed-writer
 ## Import Standalone
 
 ```typescript
+import { Component } from '@angular/core';
 import { NgxTypedWriterComponent } from 'ngx-typed-writer';
 
-@NgModule({
-  imports: [
-    ...,
-    NgxTypedWriterComponent
-  ]
+@Component({
+  selector: 'app-awesome',
+  standalone: true,
+  imports: [NgxTypedWriterComponent],
+  template: `<ngx-typed-writer [strings]="['Angular 22 ready']" />`,
 })
-export class AwesomeComponent { }
+export class AwesomeComponent {}
 ```
 
 ## Import into Module

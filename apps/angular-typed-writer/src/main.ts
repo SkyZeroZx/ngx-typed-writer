@@ -6,6 +6,7 @@ import {
   bootstrapApplication,
   provideClientHydration,
   withEventReplay,
+  withNoIncrementalHydration,
 } from '@angular/platform-browser';
 import {
   provideRouter,
@@ -19,7 +20,7 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideClientHydration(withEventReplay()),
+    provideClientHydration(withEventReplay(), withNoIncrementalHydration()),
     provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
   ],
 }).catch((err) => console.error(err));

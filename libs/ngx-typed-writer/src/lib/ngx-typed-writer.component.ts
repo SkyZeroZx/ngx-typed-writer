@@ -1,7 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
   booleanAttribute,
-  ChangeDetectionStrategy,
   Component,
   ElementRef,
   inject,
@@ -24,7 +23,6 @@ import {
 
 @Component({
   selector: 'ngx-typed-writer',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <span #typedText> </span>
     @if (showCursor()) {

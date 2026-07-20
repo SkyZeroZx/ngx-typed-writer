@@ -3,6 +3,8 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/angular-typed-writer-e2e/src",
   "projectType": "application",
+  "tags": [],
+  "implicitDependencies": ["angular-typed-writer"],
   "targets": {
     "e2e": {
       "executor": "@nx/cypress:cypress",
@@ -27,7 +29,5 @@
         "lintFilePatterns": ["apps/angular-typed-writer-e2e/**/*.{js,ts}"]
       }
     }
-  },
-  "tags": [],
-  "implicitDependencies": ["angular-typed-writer"]
+  }
 }

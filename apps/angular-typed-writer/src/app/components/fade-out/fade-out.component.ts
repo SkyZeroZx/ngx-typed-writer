@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgxTypedWriterComponent } from 'ngx-typed-writer';
 
 @Component({
@@ -6,6 +6,5 @@ import { NgxTypedWriterComponent } from 'ngx-typed-writer';
   templateUrl: './fade-out.component.html',
   styleUrls: ['./fade-out.component.scss'],
   imports: [NgxTypedWriterComponent],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FadeOutComponent {}

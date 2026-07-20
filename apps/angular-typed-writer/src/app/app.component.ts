@@ -1,6 +1,6 @@
 import { NgxTypedWriterComponent } from 'ngx-typed-writer';
 
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 import {
   BasicUsageComponent,
@@ -22,7 +22,6 @@ import {
     SmartBackspaceComponent,
     NgxTypedWriterComponent,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   data = signal<string[]>([
